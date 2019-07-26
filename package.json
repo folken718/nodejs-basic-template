@@ -19,7 +19,6 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "amqplib": "^0.5.3",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "prettier": "^1.18.2",
@@ -29,7 +28,9 @@
     "build": "tsc",
     "test": "mocha --opts ./test/mocha.opts",
     "hello": "node_modules/.bin/ts-node src/hello.ts",
-    "coverage": "nyc mocha"
+    "coverage": "nyc mocha",
+    "format": "prettier --config ./.prettierrc.js --write \"{src, test}/**/*.ts\"",
+    "eslint": "eslint --cache --color \"{src, test}/**/*.ts\""
   },
   "nyc": {
     "branches": 80,
